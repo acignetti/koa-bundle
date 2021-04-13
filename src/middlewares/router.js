@@ -1,7 +1,9 @@
-import helloWorld from "../actions/helloWorld.js"
+import helloWorld from "../actions/helloWorld.js";
+import filterUsers from "../actions/filterUsers.js";
 
 const ROUTES = {
-    '/': helloWorld,
+    "/": helloWorld,
+    "/users": filterUsers,
 }
 
 export default async (ctx, next) => {
