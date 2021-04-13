@@ -1,8 +1,9 @@
-const Koa = require('koa');
+import Koa from 'koa';
+
+import router from './middlewares/router.js';
+
 const app = new Koa();
 
-app.use(async ctx => {
-  ctx.body = 'Hello World';
-});
+app.use(router);
 
 app.listen(3000);
