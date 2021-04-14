@@ -13,15 +13,12 @@ const filterByPosition = (users, coordinates, radius = 10) =>
     ) : users
 
 
-const reduceToFields = (users, fields) => {
-    if (!fields) return users;
+const reduceToFields = (users, fields) =>
+    fields ?
+    users.map(user =>
+        fields.reduce((result, key) => ({ ...result, [key]: user[key] }), {})
+    ) : users
 
-    return users.map(user => {
-        let newUser = {}
-        fields.forEach(element => newUser[element] = user[element]);
-        return newUser
-    })
-}
 
 export default async ctx => {
     const query = ctx.query;
