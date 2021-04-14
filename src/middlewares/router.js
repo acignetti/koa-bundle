@@ -1,8 +1,8 @@
-import helloWorld from "../actions/helloWorld.js";
+import status from "../actions/status.js";
 import filterUsers from "../actions/filterUsers.js";
 
 const ROUTES = {
-    "/": helloWorld,
+    "/": status,
     "/users": filterUsers,
 }
 
