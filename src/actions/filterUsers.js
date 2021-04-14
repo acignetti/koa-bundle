@@ -3,13 +3,15 @@ import havershine from "../helper/havershine.js"
 
 const filterByEmail = (users, filter) => filter ? users.filter(user => user.email.toLowerCase().includes(filter.toLowerCase())) : users
 
-const filterByPosition = (users, coordinates, radius = 10) => {
-    if (!coordinates) return users;
-    return users.filter(user => {
-        const distance = havershine(coordinates[0], coordinates[1], user.address.geo.lat, user.address.geo.lng)
-        if (distance <= radius) return user
-    })
-}
+const filterByPosition = (users, coordinates, radius = 10) =>
+    coordinates ?
+    users.filter(user =>
+        havershine(
+            coordinates[0], coordinates[1],
+            user.address.geo.lat, user.address.geo.lng
+        ) <= radius
+    ) : users
+
 
 const reduceToFields = (users, fields) => {
     if (!fields) return users;
