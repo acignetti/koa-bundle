@@ -1,3 +1,3 @@
-export default async ctx => {
-    ctx.body = { "status": "ok" }
-}
+export default async (ctx) => {
+  ctx.body = { status: "ok" };
+};

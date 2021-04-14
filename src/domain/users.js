@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from "fs";
 
 const DB_SOURCE = "./src/domain/USERS.json";
 
